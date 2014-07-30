@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET "http://api.sl.se/api2/realtimedepartures.xml?key=9e99975c83864b6f8dab6ab4baddaba8&siteid=4426&timewindow=60" > realtime.xml
+curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET "http://api.sl.se/api2/realtimedepartures.json?key=9e99975c83864b6f8dab6ab4baddaba8&siteid=1142&timewindow=15" > realtime.xml
 xml2 < realtime.xml > realtime2.xml
 cat realtime2.xml | sed -e "s/\/ResponseOfDepartures\/ResponseData//g" | egrep -vE 'ResponseOfDepartures|LatestUpdate|DataAge|@xmlns' | sed -e 's/\//=/g' > realtime.txt
 FILE="realtime.txt"
