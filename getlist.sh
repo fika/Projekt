@@ -4,24 +4,25 @@ xml2 < realtime.xml > realtime2.xml
 cat realtime2.xml | sed -e "s/\/ResponseOfDepartures\/ResponseData//g" | egrep -vE 'ResponseOfDepartures|LatestUpdate|DataAge|@xmlns' | sed -e 's/\//=/g' > realtime.txt
 FILE="realtime.txt"
 i=0
-echo "<html>" > bussar$i.html
-echo "<p>" >> bussar$i.html
+echo "<html>" > bussar.html
+echo "<p>" >> bussar.html
 while read line; do
         if [ "$line" == "=Buses=Bus" ]; then
-                echo "</p>" >> bussar$i.html
-                echo "</html>" >> bussar$i.html
+                echo "</p>" >> bussar.html
+                echo "</div>"
                 i=$[$i+1]
-                echo "<html>" > bussar$i.html
-                echo "<p>" >> bussar$i.html
+                echo "<div id='bussar$i'>bussar$i"
+                echo "<p>" >> bussar.html
         else
 
                 var=$(echo $i$line)
-                echo $line >> bussar$i.html
+                echo $line >> bussar.html
 
         fi
 done < $FILE
-echo "</p>" >> bussar$i.html
-echo "</html>" >> bussar$i.html
+echo "</p>" >> bussar.html
+echo "</div>" >> bussar.html
+echo "</html>" >> bussar.html
 sed -i "/\b\(JourneyDirection\|SiteId\|StopAreaNumber\|StopPointNumber\|TimeTabledDateTime\|ExpectedDateTime\)\b/d" bussar*html
 sed -i 's/TransportMode=BUS/Buss /g' bussar*html
 sed -i 's/LineNumber=/LineNumber= /g' bussar*html
