@@ -11,7 +11,7 @@ while read line; do
                 echo "</p>" >> bussar.html
                 echo "</div>" >> bussar.html
                 i=$[$i+1]
-                echo "<div id='bussar$i'>bussar$i" >> bussar.html
+                echo "<div id='bussar$i'>" >> bussar.html
                 echo "<p>" >> bussar.html
         else
 
