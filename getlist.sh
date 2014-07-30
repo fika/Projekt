@@ -9,9 +9,9 @@ echo "<p>" >> bussar.html
 while read line; do
         if [ "$line" == "=Buses=Bus" ]; then
                 echo "</p>" >> bussar.html
-                echo "</div>"
+                echo "</div>" >> bussar.html
                 i=$[$i+1]
-                echo "<div id='bussar$i'>bussar$i"
+                echo "<div id='bussar$i'>bussar$i" >> bussar.html
                 echo "<p>" >> bussar.html
         else
 
