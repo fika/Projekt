@@ -30,3 +30,4 @@ sed -i 's/Destination=/Destination= mot /g' bussar*html
 sed -i 's/StopAreaName=/StopAreaName= från /g' bussar*html
 sed -i 's/DisplayTime=/DisplayTime= avgår om /g' bussar*html
 sed -i 's/=.*=//g' bussar*html
+rm realtime*
