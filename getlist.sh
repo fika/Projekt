@@ -31,3 +31,5 @@ sed -i 's/StopAreaName=/StopAreaName= från /g' bussar*html
 sed -i 's/DisplayTime=/DisplayTime= avgår om /g' bussar*html
 sed -i 's/=.*=//g' bussar*html
 rm realtime*
+cat /srv/metatag >> bussar.html
+mv -f bussar.html /var/www/lovedufva.se/public_html/
