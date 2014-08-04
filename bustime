@@ -23,7 +23,7 @@ done < $FILE
 echo "</p>" >> bussar.html
 echo "</div>" >> bussar.html
 echo "</html>" >> bussar.html
-sed -i "/\b\(JourneyDirection\|SiteId\|StopAreaNumber\|StopPointNumber\|TimeTabledDateTime\|ExpectedDateTime\)\b/d" bussar*html
+sed -i "/\b\(JourneyDirection\|SiteId\|StopAreaNumber\|StopPointNumber\|TimeTabledDateTime\|ExpectedDateTime\|GroupOfLine\)\b/d" bussar*html
 sed -i 's/TransportMode=BUS/Buss /g' bussar*html
 sed -i 's/LineNumber=/LineNumber= /g' bussar*html
 sed -i 's/Destination=/Destination= mot /g' bussar*html
