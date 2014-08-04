@@ -1,0 +1,5 @@
+#!/bin/bash
+read -rp "Vilken hållplats/station är närmst dig? Du måste stava _EXAKT_ rätt, annars skiter det sig.: " hpl
+read -rp "Hur många minuter framåt i tiden vill du se? (max 60): " timewin
+siteID=$(grep $hpl listan.txt | grep -Eo [0-9] | tr '\n' ' ' | sed -e 's/ //g')
+curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET "http://api.sl.se/api2/realtimedepartures.xml?key=9e99975c83864b6f8dab6ab4baddaba8&siteid=$siteID&timewindow=$timewin" > enfil.xml
