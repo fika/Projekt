@@ -33,3 +33,4 @@ sed -i 's/=.*=//g' bussar*html
 rm realtime*
 cat /srv/metatag >> bussar.html
 mv -f bussar.html /var/www/lovedufva.se/public_html/
+sed -i 's/om Nu/nu/g' /var/www/lovedufva.se/public_html/bussar.html
